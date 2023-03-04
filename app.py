@@ -6,5 +6,6 @@ app = Flask(__name__)
 # Define what the app does
 @app.get("/greet")
 def index():
-    response = {"data":"value is hellow world"}
+    name = request.args.get("name")
+    response = {"data":f"hello, {name} !"}
     return jsonify(response)
